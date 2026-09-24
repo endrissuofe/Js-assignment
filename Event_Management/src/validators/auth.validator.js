@@ -25,4 +25,9 @@ const loginSchema = Joi.object({
   password: Joi.string().required(),
 });
 
-module.exports = { registerSchema, loginSchema };
+// Rules for POST /api/auth/resend-verification
+const resendSchema = Joi.object({
+  email: Joi.string().trim().email().required(),
+});
+
+module.exports = { registerSchema, loginSchema, resendSchema };
