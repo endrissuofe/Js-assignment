@@ -130,6 +130,7 @@ async function login(req, res) {
   // The token only carries the user id. It is signed with our secret,
   // so any change to it will be detected.
   const token = jwt.sign({ id: user._id }, config.jwt.secret, {
+    algorithm: 'HS256',
     expiresIn: config.jwt.expiresIn,
   });
 

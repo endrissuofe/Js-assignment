@@ -6,6 +6,6 @@ const router = express.Router();
 router.get('/health', (req, res) => res.json({ success: true, status: 'ok' }));
 
 router.use('/auth', require('./auth.routes'));
-// router.use('/user', require('./user.routes'));  // coming in a later phase
+router.use('/user', require('./user.routes'));
 
 module.exports = router;
